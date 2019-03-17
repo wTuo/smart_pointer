@@ -49,7 +49,7 @@ protected:
 
 /***************************************************Inline********************************************************/
 
-//! Konstruktor domyslny
+
 template <typename T>
 SmartPointer<T>::SmartPointer()
 	:pointer(nullptr), ref(nullptr)
@@ -58,7 +58,7 @@ SmartPointer<T>::SmartPointer()
 	ref->Add();
 }
 
-//! Konstruktor (T *other)
+
 template <typename T>
 SmartPointer<T>::SmartPointer(T *other) 
 	:pointer(other), ref(nullptr)
@@ -67,7 +67,7 @@ SmartPointer<T>::SmartPointer(T *other)
 	ref->Add();
 }
 
-//! Konstruktor (U *other)
+
 template <typename T> template <typename U>
 SmartPointer<T>::SmartPointer(U * other)
 	:pointer(static_cast<T*>(other)), ref(nullptr)
@@ -76,7 +76,7 @@ SmartPointer<T>::SmartPointer(U * other)
 	ref->Add();
 }
 
-//! Konstruktor kopiujacy przyjmujacy argument(const SmartPointer<T> &other)
+
 template <typename T>
 SmartPointer<T>::SmartPointer(const SmartPointer<T> &other)
 	:pointer(other.pointer), ref(other.ref)
@@ -84,7 +84,7 @@ SmartPointer<T>::SmartPointer(const SmartPointer<T> &other)
 	ref->Add();
 }
 
-//! Konstruktor kopiujacy przyjmujacy argument(const SmartPointer<U> &other)
+
 template <typename T> template <typename U>
 inline SmartPointer<T>::SmartPointer(const SmartPointer<U> &other)
 	:pointer(static_cast<T*>(other.pointer)), ref(other.ref)
@@ -131,7 +131,7 @@ T * SmartPointer<T>::operator->() const
 	return pointer;
 }
 
-//! Zwalnia pointer oraz ref, jesli counter jest rowny zero
+
 template <typename T>
 inline void SmartPointer<T>::Remove()
 {
