@@ -12,7 +12,7 @@ protected:
 public:
 	ReferenceCounter(): counter(0) {}
 
-	//! Destruktor, jesli counter != 0 znaczy, ze zostal zle policzony
+	
 	~ReferenceCounter() { assert(counter == 0); } 
 	void Add() { counter++; }
 	unsigned int Remove() { return --counter; }
